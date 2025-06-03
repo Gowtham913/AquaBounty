@@ -1,8 +1,8 @@
 import orderModel from "../models/orderModel.js"
 import userModel from "../models/userModel.js";
-import jwt from 'jsonwebtoken'
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 const { sign } = jwt;
+
 
 
 function generateUpiLink(app, upiId, amount, payeeName) {
