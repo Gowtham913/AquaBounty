@@ -59,13 +59,13 @@ const PlaceOrder = () => {
       const response = await axios.post(backendURL + '/api/order/placeppay', orderData, { headers: { token } });
       if (response.data.success) {
         setCartItems({});
-        toast.success(response.data.message)
+        toast.success(response.data.message);
         console.log(response.data);
         console.log("Your amount is" + response.data.amount );
       } else {
-        toast.error(error.message);
-        console.log("Something went wrong");
+        toast.error(response.data.message || "Something went wrong");
       }
+
 
     } catch (error) {
       console.log(error);
