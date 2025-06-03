@@ -1,9 +1,12 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import orderModel from "../models/orderModel.js"
 import userModel from "../models/userModel.js";
-import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken'
 const { sign } = jwt;
 
-
+const JWT_SECRET = process.env.JWT_SECRET;
 
 function generateUpiLink(app, upiId, amount, payeeName) {
   const note = "Order Payment";
